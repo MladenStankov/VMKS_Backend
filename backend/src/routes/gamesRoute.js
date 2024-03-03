@@ -1,7 +1,8 @@
 import express from "express"
 import {getGames, getGameByID, getGamesByUserID, createGame } from "../controllers/gamesController.js"
-import { getUserByID, getUserBalanceByID } from "../controllers/usersController.js"
-import { calculateRows } from "../utility/calculateRows.js"
+import { getUserByID, updateUserBalanceByID } from "../controllers/usersController.js"
+import calculateRowsAndReward from "../utility/calculateRows.js"
+import { createTransaction } from "../controllers/transactionsController.js"
 const router = express.Router()
 
 // GET GAMES
@@ -48,8 +49,12 @@ router.post("/", async (req, res) => {
         return res.status(400).send({message: "Not enough balance"})
     }
 
-    const [row_array, reward] = await calculateRows(fee)
+    const [row_array, reward] = await calculateRowsAndReward(fee)
     await createGame(row_array, fee, reward, user_id)
+    await createTransaction("game_fee", user_id, fee)
+    await updateUserBalanceByID(user_id, newBalance)
 
     res.status(200).send({row_array, reward})
 })
+
+export default router

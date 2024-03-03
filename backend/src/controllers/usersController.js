@@ -19,6 +19,11 @@ export async function getUserByEmail(email) {
     return result[0]
 }
 
+export async function getUserByUserName(user_name) {
+    const [result] = await pool.query("SELECT * FROM users WHERE user_name = ?", [user_name])
+    return result[0]
+}
+
 export async function getUserByQRCode(qr_code) {
     const [result] = await pool.query("SELECT balance FROM users WHERE qr_code = ?", [qr_code])
     return result[0]

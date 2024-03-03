@@ -21,7 +21,7 @@ export async function getGamesByUserID(user_id) {
 
 export async function createGame(row_array, fee, reward, user_id) {
     const result = await pool.query(
-        "INSERT INTO games (row_array, fee, reward, user_id) VALUES (?, ?, ?, ?)", [row_array, fee, reward, user_id])
+        "INSERT INTO games (row_array, fee, reward, user_id) VALUES (?, ?, ?, ?)", [JSON.stringify(row_array), fee, reward, user_id])
 
     return result
 }

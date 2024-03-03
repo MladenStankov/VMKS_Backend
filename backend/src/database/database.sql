@@ -1,6 +1,5 @@
 SET SQL_SAFE_UPDATES=0;
 
-DROP DATABASE slot_machine;
 CREATE DATABASE IF NOT EXISTS slot_machine;
 USE slot_machine;
 
@@ -11,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
     user_name VARCHAR(255) NOT NULL UNIQUE,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    qr_code VARCHAR(255) NOT NULL UNIQUE,
+    qr_code MEDIUMTEXT NOT NULL,
     balance DECIMAL(10, 2) DEFAULT 0
 );
 

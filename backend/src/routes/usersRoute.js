@@ -67,13 +67,12 @@ router.get("/balance/:id", async (req, res) => {
 router.post("/register", async (req, res) => {
     const {first_name, last_name, user_name, email, password} = req.body
 
-    if(await getUserByEmail(email)) {
+    if(await getUserByEmail(email) || await get) {
         return res.status(400).send({message: "User exists"})
     }
 
     await createUser(first_name, last_name, user_name, email, password)
-    const user = await getUserByEmail(email)
-    return user
+    res.status(200).send(await getUserByEmail(email))
 })
 
 router.post("/login", async (req, res) => {
