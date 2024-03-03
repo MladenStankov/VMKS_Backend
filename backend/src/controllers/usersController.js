@@ -1,6 +1,7 @@
 import pool from "../database/database.js"
 import generateQRCode from "../utility/qr_code.js"
 
+
 // GET USERS
 
 export async function getUsers() {
@@ -37,9 +38,8 @@ export async function getUserBalanceByID(id) {
 //POST USER
 
 export async function createUser(first_name, last_name, user_name, email, password) {
-    do {
-        var qr_code = await generateQRCode()
-    } while(await getUserByQRCode(qr_code))
+    const credentials = first_name + last_name + user_name + email + password
+    const qr_code = await generateQRCode(credentials)
 
     const result = await pool.query(
         "INSERT INTO users (first_name, last_name, user_name, email, password, qr_code) VALUES (?, ?, ?, ?, ?, ?)",
