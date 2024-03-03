@@ -2,7 +2,7 @@
 
 ### Get User by ID
 
-**Route**: `/id/:id`
+**Route**: `users/id/:id`
 
 **Description**: Fetches a user by their ID.
 
@@ -15,7 +15,7 @@
 
 ### Get User by Email
 
-**Route**: `/email/:email`
+**Route**: `users/email/:email`
 
 **Description**: Fetches a user by their email address.
 
@@ -28,7 +28,7 @@
 
 ### Get User by QR Code
 
-**Route**: `/qr_code/:qr_code`
+**Route**: `users/qr_code/:qr_code`
 
 **Description**: Fetches a user by their QR code.
 
@@ -41,7 +41,7 @@
 
 ### Get User Password by Email
 
-**Route**: `/password/:email`
+**Route**: `users/password/:email`
 
 **Description**: Fetches the password of a user by their email address.
 
@@ -54,7 +54,7 @@
 
 ### Get User Balance by ID
 
-**Route**: `/balance/:id`
+**Route**: `users/balance/:id`
 
 **Description**: Fetches the balance of a user by their ID.
 
@@ -69,7 +69,7 @@
 
 ### Register User
 
-**Route**: `/register`
+**Route**: `users/register`
 
 **Description**: Registers a new user.
 
@@ -86,7 +86,7 @@
 
 ### Login User
 
-**Route**: `/login`
+**Route**: `users/login`
 
 **Description**: Logs in a user.
 
