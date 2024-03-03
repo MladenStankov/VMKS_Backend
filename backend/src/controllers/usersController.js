@@ -5,7 +5,7 @@ import generateQRCode from "../utility/qr_code.js"
 
 export async function getUsers() {
     const [results] = await pool.query("SELECT * FROM users" )
-    return results
+    return [results]
 }
 
 export async function getUserByID(id) {

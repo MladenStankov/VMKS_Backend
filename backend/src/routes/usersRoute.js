@@ -2,6 +2,7 @@ import express from "express"
 import {getUsers, getUserByID, getUserByEmail, getUserPasswordByEmail, getUserBalanceByID, getUserByQRCode, createUser, updateUserBalanceByID} from "../controllers/usersController.js"
 const router = express.Router()
 
+// GET USERS
 
 router.get("/", async (req, res) => {
     const users = await getUsers()
@@ -61,6 +62,8 @@ router.get("/balance/:id", async (req, res) => {
     res.status(200).send(balance)
 })
 
+// POST USERS
+
 router.post("/register", async (req, res) => {
     const {first_name, last_name, user_name, email, password} = req.body
 
@@ -89,6 +92,8 @@ router.post("/login", async (req, res) => {
 
     res.status(200).send(user)
 })
+
+// PUT USERS
 
 router.put("/change_balance", async (req, res) => {
     const {id, balance} = req.body

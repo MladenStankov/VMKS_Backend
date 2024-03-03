@@ -5,7 +5,7 @@ const pool = mysql
         host: "localhost",
         user: "root",
         password: "password",
-        database: "Slot_Machine"
+        database: "slot_machine"
     })
     .promise();
 
