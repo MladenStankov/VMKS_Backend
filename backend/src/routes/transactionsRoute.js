@@ -1,6 +1,6 @@
 import express from "express"
 import { getTransactions, getTransactionById, getTransactionsByUserID, createTransaction } from "../controllers/transactionsController.js"
-import { getUserByID, getUserBalanceByID, updateUserBalanceByID } from "../controllers/usersController.js"
+import { getUserByID, updateUserBalanceByID } from "../controllers/usersController.js"
 const router = express.Router()
 
 // GET TRANSACTION
