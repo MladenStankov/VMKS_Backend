@@ -2,7 +2,7 @@
 
 ### Get Transactions by User ID
 
-**Route**: `/user_id/:user_id`
+**Route**: `transactions/user_id/:user_id`
 
 **Description**: Fetches transactions associated with a user by their user ID.
 
@@ -17,7 +17,7 @@
 
 ### Create Transaction
 
-**Route**: `/`
+**Route**: `transactions/`
 
 **Description**: Creates a new transaction.
 
