@@ -52,9 +52,9 @@ router.post("/", async (req, res) => {
     const [row_array, reward] = await calculateRowsAndReward(fee)
     await createGame(row_array, fee, reward, user_id)
     await createTransaction("game_fee", user_id, fee)
-    await updateUserBalanceByID(user_id, newBalance + reward)
+    await createTransaction("game_reward", user_id, reward)
 
-    res.status(200).send({row_array, reward})
+    res.status(200).send(row_array)
 })
 
 export default router
