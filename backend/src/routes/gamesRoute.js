@@ -1,6 +1,6 @@
 import express from "express"
 import {getGames, getGameByID, getGamesByUserID, createGame } from "../controllers/gamesController.js"
-import { getUserByID, updateUserBalanceByID } from "../controllers/usersController.js"
+import { getUserByID } from "../controllers/usersController.js"
 import calculateRowsAndReward from "../utility/calculateRows.js"
 import { createTransaction } from "../controllers/transactionsController.js"
 const router = express.Router()
