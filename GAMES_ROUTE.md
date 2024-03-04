@@ -27,4 +27,4 @@
 
 **Response**:
 - Status: 200 OK
-- Body: An object containing information about the game, including rows and rewards.
+- Body: An object containing information about the rows.
