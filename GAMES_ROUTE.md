@@ -2,7 +2,7 @@
 
 ### Get Games by User ID
 
-**Route**: `transactions/user_id/:user_id`
+**Route**: `games/user_id/:user_id`
 
 **Description**: Fetches games associated with a user by their user ID.
 
@@ -17,7 +17,7 @@
 
 ### Create Game
 
-**Route**: `transactions/`
+**Route**: `games/`
 
 **Description**: Creates a new game.
 

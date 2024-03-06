@@ -1,5 +1,5 @@
 import express from "express"
-import {getUsers, getUserByID, getUserByEmail, getUserPasswordByEmail, getUserBalanceByID, getUserByQRCode, createUser, updateUserBalanceByID} from "../controllers/usersController.js"
+import {getUsers, getUserByID, getUserByEmail, getUserPasswordByEmail, getUserBalanceByID, getUserByQRCode, createUser, updateUserBalanceByID, getUserByUserName} from "../controllers/usersController.js"
 const router = express.Router()
 
 // GET USERS
@@ -67,7 +67,7 @@ router.get("/balance/:id", async (req, res) => {
 router.post("/register", async (req, res) => {
     const {first_name, last_name, user_name, email, password} = req.body
 
-    if(await getUserByEmail(email) || await get) {
+    if(await getUserByEmail(email) || await getUserByUserName(user_name)) {
         return res.status(400).send({message: "User exists"})
     }
 
